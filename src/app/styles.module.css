@@ -13,7 +13,7 @@
 }
 
 .unicornButton {
-    background: linear-gradient(#ffffff50) border-box, var(--unicorn), #EED7FA;
+    background: linear-gradient(#ffffff50 0 0), var(--unicorn);
 }
 
 .unicornButton:hover {
