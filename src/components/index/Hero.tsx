@@ -1,9 +1,8 @@
 export default function Hero() {
   return (
     <section
-      className="w-[100vw] flex justify-center items-center"
+      className="w-[100vw] h-[100vh] flex justify-center items-center"
       style={{
-        height: "calc(100vh - 70px)",
         background:
           "linear-gradient(to bottom, #EED7FA33 0%, #EED7FA33 40%, #EED7FA33 70%, #1E001E 100%, #EED7FA 130%, #EED7FA 230%), var(--unicorn)",
       }}

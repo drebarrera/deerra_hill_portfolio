@@ -9,8 +9,8 @@ export default function Carousel({ items }: { items: CarouselItemType[] }) {
       <div key={i} className="w-[225px] h-fit flex flex-col gap-[10px] justify-center itemrs-center">
         <div className="w-[225px] aspect-[45/70] bg-[#333333] animate-pulse"></div>
         <div className="w-full flex flex-col gap-[5px] justify-center itemrs-center">
-          <p className="w-full animate-pulse text-center">Loading...</p>
-          <p className="w-full animate-pulse text-center">•••</p>
+          <p className="w-full text-center">•••</p>
+          <p className="w-full text-center">•••</p>
         </div>
       </div>
     )}

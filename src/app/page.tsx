@@ -3,6 +3,8 @@ import '@/assets/fonts/fonts.css';
 
 //import { client } from "@/sanity/client";
 import Header from "@/components/Header";
+import About from '@/components/index/About';
+import Education from '@/components/index/Education';
 import Hero from "@/components/index/Hero";
 import Main from "@/components/index/Main";
 
@@ -21,6 +23,8 @@ export default async function IndexPage() {
       <Header/>
       <Hero/>
       <Main/>
+      <Education/>
+      <About/>
     </main>
   );
 }
