@@ -1,5 +1,5 @@
 //import { type SanityDocument } from "next-sanity";
-import '../assets/fonts/fonts.css';
+import '@/src/assets/fonts/fonts.css';
 
 //import { client } from "@/sanity/client";
 import Header from "@/components/Header";
