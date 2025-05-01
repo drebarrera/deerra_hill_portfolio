@@ -9,7 +9,7 @@ export default function Header() {
             <a href="/education" className="decoration-0"><p className="text-base md:text-lg font-semibold hover:underline underline-offset-4">Education</p></a>
             <a href="/projects" className="decoration-0"><p className="text-base md:text-lg font-semibold hover:underline underline-offset-4">Resume</p></a>
             <a href="/projects" className="relative decoration-0 w-fit h-fit">
-                <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>Let's Connect</div>
+                <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>Let&apos;s Connect</div>
             </a>
         </nav>
     </header>;

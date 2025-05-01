@@ -8,11 +8,11 @@ export default function Main() {
       <p className="text-xl md:text-2xl font-semibold">welcome to</p>
       <p className="text-4xl md:text-5xl" style={{ fontFamily: "Squada One" }}>THE DÉERRAVERSE</p>
     </div>
-    <div className="w-full flex flex-col max-w-[1500px] gap-[15px]">
+    <div className="w-full flex flex-col max-w-[1500px] gap-[30px]">
       <h3 className="text-xl md:text-2xl">FEATURED</h3>
       <Carousel items={[]} />
       <div className="w-full flex flex-col justify-center items-center gap-[10px]">
-        <p className="text-lg md:text-xl font-medium">Curious of what else I've been creating?</p>
+        <p className="text-lg md:text-xl font-medium">Curious of what else I&apos;ve been creating?</p>
         <a href="/projects" className="relative decoration-0 w-fit h-fit">
           <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>Dive into the Déerraverse</div>
         </a>
