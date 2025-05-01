@@ -1,0 +1,121 @@
+/* Inter */
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: thin;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: thin;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: light;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: medium;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: medium;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: italic;
+}
+
+/* Oleo Script Swash Caps */
+@font-face {
+    font-family: 'Oleo Script Swash Caps';
+    src: url('OleoScriptSwashCaps-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oleo Script Swash Caps';
+    src: url('OleoScriptSwashCaps-Bold.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+/* Squada One */
+@font-face {
+    font-family: 'Squada One';
+    src: url('SquadaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
