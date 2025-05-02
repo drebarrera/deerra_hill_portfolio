@@ -1,4 +1,4 @@
-import { CarouselItemType } from "@/types/carousel";
+import { CarouselItemType } from "@/app/types";
 
 export default function Carousel({ items }: { items: CarouselItemType[] }) {
   return <div className="w-full flex flex-row gap-[30px]">

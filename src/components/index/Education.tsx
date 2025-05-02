@@ -13,7 +13,7 @@ export default function Education() {
           <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>Step into my classroom &rarr;</div>
         </a>
       </div>
-      <div className="w-full min-h-[400px] h-full" style={{ background: "url('/assets/index/deerra_hill_classroom.webp')", backgroundSize: "cover", backgroundPosition: "0" }}></div>
+      <div className="w-full min-h-[400px] h-full" style={{ background: "url('/assets/index/deerra_hill_classroom.webp')", backgroundSize: "cover", backgroundPosition: "center" }}></div>
     </div>
   </section>
 }
