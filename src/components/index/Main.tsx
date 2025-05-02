@@ -4,15 +4,16 @@ import { client } from "@/sanity/client";
 import imageUrlBuilder from '@sanity/image-url';
 
 import styles from "@/app/styles.module.css";
+import { CarouselItemType, SanityImageType } from "@/app/types";
 
 const builder = imageUrlBuilder(client);
 
-function buildImage(sanityImage: any): ImageUrlBuilder | null {
+function buildImage(sanityImage: SanityImageType | undefined): ImageUrlBuilder | null {
   if (!sanityImage) return null;
   return builder.image(sanityImage);
 }
 
-export default function Main({ supertitle, title, subtitle, image, carousel_title, carousel_projects, cta_caption, cta_button_text }: { supertitle: string, title: string, subtitle: string, image: any, carousel_title: string, carousel_projects: any, cta_caption: string, cta_button_text: string  } ) {
+export default function Main({ supertitle, title, subtitle, image, carousel_title, carousel_projects, cta_caption, cta_button_text }: { supertitle: string, title: string, subtitle: string, image: SanityImageType | undefined, carousel_title: string, carousel_projects: CarouselItemType[], cta_caption: string, cta_button_text: string  } ) {
   return <section className="w-full flex flex-col justify-center p-[60px] gap-[30px]" style={{ background: "linear-gradient(to bottom, #1E001E 0%, #111111 100%" }}>
     <div className="w-full flex flex-col aspect-[3] items-center gap-[5px] pt-[30px]" style={{ backgroundImage: `url('${buildImage(image)?.url()}')`, backgroundSize: "cover", maskImage: "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)", maskSize: "100% 100%", maskRepeat: "no-repeat" }}>
       <p className="text-xl md:text-2xl font-semibold">{supertitle}</p>

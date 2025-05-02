@@ -1,18 +1,18 @@
-import { CarouselItemType } from "@/app/types";
+import { CarouselItemType, SanityImageType } from "@/app/types";
 import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 import { client } from "@/sanity/client";
 import imageUrlBuilder from '@sanity/image-url';
 
 const builder = imageUrlBuilder(client);
 
-function buildImage(sanityImage: any): ImageUrlBuilder | null {
+function buildImage(sanityImage: SanityImageType | undefined): ImageUrlBuilder | null {
   if (!sanityImage) return null;
   return builder.image(sanityImage);
 }
 
 export default function Carousel({ items }: { items: CarouselItemType[] }) {
   return <div className="w-full flex flex-row gap-[30px]">
-    {items.length ? items.map((carouselItem, i) => 
+    {items.length ? items.map((carouselItem) => 
       <a key={carouselItem.id}  href={`/projects/#${carouselItem.id}`} className="decoration-0">
         <div className="w-[225px] h-fit flex flex-col gap-[10px] justify-center items-center">
           <div className="w-[225px] aspect-[45/70] bg-[#333333]" style={{backgroundImage: `url('${buildImage(carouselItem.image)?.width(500)?.url()}')`, backgroundSize: "cover", backgroundPosition: "center"}}></div>

@@ -2,15 +2,16 @@ import styles from "@/app/styles.module.css";
 import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 import { client } from "@/sanity/client";
 import imageUrlBuilder from '@sanity/image-url';
+import { SanityImageType } from "@/app/types";
 
 const builder = imageUrlBuilder(client);
 
-function buildImage(sanityImage: any): ImageUrlBuilder | null {
+function buildImage(sanityImage: SanityImageType | undefined): ImageUrlBuilder | null {
   if (!sanityImage) return null;
   return builder.image(sanityImage);
 }
 
-export default function Education({ supertitle, title, subtitle, description, button_text, image }: {supertitle: string, title: string, subtitle: string, description: string, button_text: string, image: any}) {
+export default function Education({ supertitle, title, subtitle, description, button_text, image }: {supertitle: string, title: string, subtitle: string, description: string, button_text: string, image: SanityImageType | undefined}) {
   return <section className="w-full h-fit py-[120px] px-[60px] flex justify-center items-center" style={{ background: "linear-gradient(to bottom, #111111 0%, #11111100 15%, #11111100 85%, #111111 100%), #6E236E" }}>
     <div className="max-w-[1500px] w-full h-fit flex flex-row justify-between items-center gap-[50px]">
       <div className="w-full h-fit flex flex-col gap-[15px]">

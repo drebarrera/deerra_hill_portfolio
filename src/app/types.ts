@@ -1,7 +1,7 @@
 export type HomePageType = {
   carousel_title: string;
-  about_image: { _type: string; asset: [Object] };
-  main_image: { _type: string; asset: [Object] };
+  about_image: { _type: string; asset: [object] };
+  main_image: { _type: string; asset: [object] };
   main_cta_text: string;
   main_title: string;
   main_subtitle: string;
@@ -13,13 +13,13 @@ export type HomePageType = {
   about_subtitle: string;
   section_description: string;
   about_description: string;
-  section_image: { _type: string; asset: [Object] };
+  section_image: { _type: string; asset: [object] };
   section_title: string;
   main_supertitle: string;
   hero_subtitle: string;
   hero_title: string;
   main_cta_button: string;
-  carousel_projects: [ [Object] ];
+  carousel_projects: [ [object] ];
   section_supertitle: string;
   section_subtitle: string;
   section_button: string
@@ -27,7 +27,12 @@ export type HomePageType = {
 
 export type CarouselItemType = {
   id: string;
-  image: string;
+  image: SanityImageType | undefined;
   title: string;
   subtitle: string;
 }
+
+export type SanityImageType = {
+  _type: string;
+  asset: [object];
+};
