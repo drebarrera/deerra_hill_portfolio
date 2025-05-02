@@ -12,8 +12,8 @@ function buildImage(sanityImage: SanityImageType | undefined): ImageUrlBuilder |
 }
 
 export default function About({ supertitle, title, subtitle, description, button_text, image }: {supertitle: string, title: string, subtitle: string, description: string, button_text: string, image: SanityImageType | undefined}) {
-  return <section id="about" className="w-full h-fit py-[120px] px-[60px] flex justify-center items-center" style={{ background: "radial-gradient(#6E236E 0%, #111111 60%)" }}>
-    <div className="max-w-[1500px] w-full h-fit flex flex-row justify-between items-center gap-[50px]">
+  return <section id="about" className="w-full h-fit py-[80px] md:py-[120px] px-[25px] md:px-[60px] flex justify-center items-center" style={{ background: "radial-gradient(#6E236E 0%, #111111 60%)" }}>
+    <div className="max-w-[1500px] w-full h-fit flex flex-wrap md:flex-nowrap md:flex-row justify-between items-center gap-[50px]">
       <div className="w-full h-full">
         <img 
           className="w-full h-full object-cover" 
