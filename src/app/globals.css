@@ -13,6 +13,11 @@
   }
 }
 
-body {
+body, html {
   background-color: #000000;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }

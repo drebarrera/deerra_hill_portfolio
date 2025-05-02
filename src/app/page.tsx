@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import { type SanityDocument } from "next-sanity";
 import '@/assets/fonts/fonts.css';
 
 import Header from "@/components/Header";
@@ -22,17 +21,18 @@ export default function IndexPage() {
       if (data && data.length) setHomePageContent(data[0]);
       else setPageError(true);
       setPageLoading(false);
+      console.log(data);
     });
   }, []);
 
   return (
-    <main className="relative w-full text-white" style={{ fontFamily: "Inter" }}>
+    <main className="relative w-[full] text-white overflow-clip" style={{ fontFamily: "Inter" }}>
         {!pageLoading && <Header/>}
         <Hero title={pageError ? 'Error: Site Unavailable' : homePageContent?.hero_title ?? ''} subtitle={homePageContent?.hero_subtitle ?? ''} description={homePageContent?.hero_description ?? ''} />
         {!pageLoading && <>
-          <Main/>
-          <Education/>
-          <About/>
+          <Main supertitle={homePageContent?.main_supertitle ?? ''} title={homePageContent?.main_title ?? ''} subtitle={homePageContent?.main_subtitle ?? ''} image={homePageContent?.main_image} carousel_title={homePageContent?.carousel_title ?? ''} carousel_projects={homePageContent?.carousel_projects} cta_caption={homePageContent?.main_cta_text ?? ''} cta_button_text={homePageContent?.main_cta_button ?? ''} />
+          <Education supertitle={homePageContent?.section_supertitle ?? ''} title={homePageContent?.section_title ?? ''} subtitle={homePageContent?.section_subtitle ?? ''}  description={homePageContent?.section_description ?? ''}  button_text={homePageContent?.section_button ?? ''}  image={homePageContent?.section_image} />
+          <About supertitle={homePageContent?.about_supertitle ?? ''} title={homePageContent?.about_title ?? ''} subtitle={homePageContent?.about_subtitle ?? ''}  description={homePageContent?.about_description ?? ''}  button_text={homePageContent?.about_button ?? ''}  image={homePageContent?.about_image}/>
         </>}
     </main>
   );
