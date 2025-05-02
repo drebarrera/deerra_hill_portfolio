@@ -10,9 +10,9 @@ function buildImage(sanityImage: SanityImageType | undefined): ImageUrlBuilder |
   return builder.image(sanityImage);
 }
 
-export default function Carousel({ items }: { items: CarouselItemType[] }) {
+export default function Carousel({ items }: { items: CarouselItemType[] | undefined }) {
   return <div className="w-full flex flex-row gap-[30px]">
-    {items.length ? items.map((carouselItem) => 
+    {items && items.length ? items.map((carouselItem) => 
       <a key={carouselItem.id}  href={`/projects/#${carouselItem.id}`} className="decoration-0">
         <div className="w-[225px] h-fit flex flex-col gap-[10px] justify-center items-center">
           <div className="w-[225px] aspect-[45/70] bg-[#333333]" style={{backgroundImage: `url('${buildImage(carouselItem.image)?.width(500)?.url()}')`, backgroundSize: "cover", backgroundPosition: "center"}}></div>

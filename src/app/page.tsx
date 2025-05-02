@@ -9,7 +9,7 @@ import Education from '@/components/index/Education';
 import Hero from "@/components/index/Hero";
 import Main from "@/components/index/Main";
 import { getHomePage } from "./actions/query";
-import { HomePageType } from "./types";
+import { CarouselItemType, HomePageType } from "./types";
 
 export default function IndexPage() {
   const [pageLoading, setPageLoading] = useState<boolean>(true);
@@ -30,7 +30,7 @@ export default function IndexPage() {
         {!pageLoading && <Header/>}
         <Hero title={pageError ? 'Error: Site Unavailable' : homePageContent?.hero_title ?? ''} subtitle={homePageContent?.hero_subtitle ?? ''} description={homePageContent?.hero_description ?? ''} />
         {!pageLoading && <>
-          <Main supertitle={homePageContent?.main_supertitle ?? ''} title={homePageContent?.main_title ?? ''} subtitle={homePageContent?.main_subtitle ?? ''} image={homePageContent?.main_image} carousel_title={homePageContent?.carousel_title ?? ''} carousel_projects={homePageContent?.carousel_projects} cta_caption={homePageContent?.main_cta_text ?? ''} cta_button_text={homePageContent?.main_cta_button ?? ''} />
+          <Main supertitle={homePageContent?.main_supertitle ?? ''} title={homePageContent?.main_title ?? ''} subtitle={homePageContent?.main_subtitle ?? ''} image={homePageContent?.main_image} carousel_title={homePageContent?.carousel_title ?? ''} carousel_projects={homePageContent?.carousel_projects as CarouselItemType[] | undefined} cta_caption={homePageContent?.main_cta_text ?? ''} cta_button_text={homePageContent?.main_cta_button ?? ''} />
           <Education supertitle={homePageContent?.section_supertitle ?? ''} title={homePageContent?.section_title ?? ''} subtitle={homePageContent?.section_subtitle ?? ''}  description={homePageContent?.section_description ?? ''}  button_text={homePageContent?.section_button ?? ''}  image={homePageContent?.section_image} />
           <About supertitle={homePageContent?.about_supertitle ?? ''} title={homePageContent?.about_title ?? ''} subtitle={homePageContent?.about_subtitle ?? ''}  description={homePageContent?.about_description ?? ''}  button_text={homePageContent?.about_button ?? ''}  image={homePageContent?.about_image}/>
         </>}
