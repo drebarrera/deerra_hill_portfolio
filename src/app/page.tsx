@@ -44,6 +44,10 @@ export default function IndexPage() {
           <Main supertitle={homePageContent?.main_supertitle ?? ''} title={homePageContent?.main_title ?? ''} subtitle={homePageContent?.main_subtitle ?? ''} image={homePageContent?.main_image} carousel_title={homePageContent?.carousel_title ?? ''} carousel_projects={homePageContent?.carousel_projects as CarouselItemType[] | undefined} cta_caption={homePageContent?.main_cta_text ?? ''} cta_button_url={homePageContent?.main_cta_button_url ?? ''} cta_button_text={homePageContent?.main_cta_button ?? ''} />
           <Education supertitle={homePageContent?.section_supertitle ?? ''} title={homePageContent?.section_title ?? ''} subtitle={homePageContent?.section_subtitle ?? ''}  description={homePageContent?.section_description ?? ''} button_url={homePageContent?.section_button_url ?? ''} button_text={homePageContent?.section_button ?? ''}  image={homePageContent?.section_image} />
           <About supertitle={homePageContent?.about_supertitle ?? ''} title={homePageContent?.about_title ?? ''} subtitle={homePageContent?.about_subtitle ?? ''}  description={homePageContent?.about_description ?? ''} button_url={homePageContent?.about_button_url ?? ''}  button_text={homePageContent?.about_button ?? ''}  image={homePageContent?.about_image}/>
+          <footer className="w-full bg-black py-[4px] flex flex-row justify-between px-[50px] items-center font-mono">
+            <p className="font-medium text-base">Designed and developed by <a href="https://www.drebarrera.com" className="font-semibold">Andrés Barrera</a></p>
+            <img src="/assets/hoo_and_dinkle.webp" className="h-[50px]"/>
+          </footer>
         </>}
     </main>
   );

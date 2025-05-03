@@ -91,6 +91,10 @@ export default function EducationPage() {
             </Link>
           </div>
         </section>
+        <footer className="w-full bg-black py-[4px] flex flex-row justify-between px-[50px] items-center font-mono">
+            <p className="font-medium text-base">Designed and developed by <a href="https://www.drebarrera.com" className="font-semibold">Andrés Barrera</a></p>
+            <img src="/assets/hoo_and_dinkle.webp" className="h-[50px]"/>
+          </footer>
     </main>
   );
 }
