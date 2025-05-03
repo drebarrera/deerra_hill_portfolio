@@ -3,6 +3,7 @@ import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 import { client } from "@/sanity/client";
 import imageUrlBuilder from '@sanity/image-url';
 import { SanityImageType } from "@/app/types";
+import Link from "next/link";
 
 const builder = imageUrlBuilder(client);
 
@@ -29,9 +30,9 @@ export default function About({ supertitle, title, subtitle, description, button
           <span className="text-lg md:text-xl">{subtitle}</span>
         </h2>
         <p className="text-base md:text-lg">{description}</p>
-        <a href="/education" className="relative decoration-0 w-fit h-fit">
+        <Link href="/education" className="relative decoration-0 w-fit h-fit">
           <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>{button_text}</div>
-        </a>
+        </Link>
       </div>
     </div>
   </section>

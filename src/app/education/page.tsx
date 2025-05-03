@@ -12,6 +12,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import { SanityImageType } from "@/app/types";
 
 import styles from "@/app/styles.module.css";
+import Link from "next/link";
 
 const builder = imageUrlBuilder(client);
 
@@ -23,6 +24,18 @@ function buildImage(sanityImage: SanityImageType | undefined): ImageUrlBuilder |
 export default function EducationPage() {
   const [projectPageContent, setProjectPageContent] = useState<EducationPageType>();
   const [projectContent, setProjectContent] = useState<ProjectType[]>();
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const el = document.getElementById(id);
+      if (el) {
+        const yOffset = -100; // Scroll 40px above the element
+        const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+  }, [projectContent]);
 
   useEffect(() => {
     getEducationPage().then((data) => {
@@ -46,9 +59,9 @@ export default function EducationPage() {
           </div>
           <div className="flex flex-col gap-[10px] items-center">
             <p className="text-base md:text-lg">{projectPageContent?.cta_text ?? ''}</p>
-            <a href={projectPageContent?.button_url ?? ''} className="relative decoration-0 w-fit h-fit">
+            <Link href={projectPageContent?.button_url ?? ''} className="relative decoration-0 w-fit h-fit">
               <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>{projectPageContent?.button_text ?? ''}</div>
-            </a>
+            </Link>
           </div>
           <div className="w-full max-w-[1200px] flex flex-col gap-[30px] items-center">
             {
@@ -63,7 +76,7 @@ export default function EducationPage() {
                       <p className="text-lg md:text-xl">{[projectData.date, projectData.role, projectData.subtitle].filter(Boolean).join(' • ')}</p>
                     </div>
                     <p>{projectData.description ?? ''}</p>
-                    <a href={projectData.cta_url} className="font-semibold text-base md:text-lg text-center md:text-left">{projectData.cta_text}</a>
+                    <Link href={projectData.cta_url ?? ''} className="font-semibold text-base md:text-lg text-center md:text-left">{projectData.cta_text}</Link>
                   </div>
                 </div>
               ) :[...Array(3)].map((_, i) => 
@@ -73,9 +86,9 @@ export default function EducationPage() {
           </div>
           <div className="flex flex-col gap-[10px] items-center">
             <p className="text-base md:text-lg">{projectPageContent?.cta_text ?? ''}</p>
-            <a href={projectPageContent?.button_url ?? ''} className="relative decoration-0 w-fit h-fit">
+            <Link href={projectPageContent?.button_url ?? ''} className="relative decoration-0 w-fit h-fit">
               <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>{projectPageContent?.button_text ?? ''}</div>
-            </a>
+            </Link>
           </div>
         </section>
     </main>

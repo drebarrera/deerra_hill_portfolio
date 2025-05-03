@@ -24,6 +24,18 @@ export default function IndexPage() {
     });
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const el = document.getElementById(id);
+      if (el) {
+        const yOffset = -100; // Scroll 40px above the element
+        const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+  }, [homePageContent]);
+
   return (
     <main className="relative w-full text-white overflow-clip" style={{ fontFamily: "Inter" }}>
         <Header/>
