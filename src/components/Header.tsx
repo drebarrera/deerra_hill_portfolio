@@ -1,9 +1,19 @@
+import { getConfig } from '@/app/actions/query';
 import styles from '@/app/styles.module.css';
+import { ConfigType } from '@/app/types';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
     const [navToggled, setNavToggled] = useState<boolean>(false);
+    const [config, setConfig] = useState<ConfigType>();
+
+    useEffect(() => {
+        getConfig().then((data) => {
+            setConfig(data);
+        });
+    },[])
+    
 
     return <header className="fixed w-full z-[100] top-0 ">
         <div className="w-full h-[70px] px-[15px] md:px-[30px] bg-[#000000DD] flex flex-row justify-between items-center">
@@ -12,8 +22,8 @@ export default function Header() {
                 <Link href="/#about" className="decoration-0"><p className="text-base md:text-lg font-semibold hover:underline underline-offset-4">About Me</p></Link>
                 <Link href="/projects" className="decoration-0"><p className="text-base md:text-lg font-semibold hover:underline underline-offset-4">Projects</p></Link>
                 <Link href="/education" className="decoration-0"><p className="text-base md:text-lg font-semibold hover:underline underline-offset-4">Education</p></Link>
-                <Link href="/projects" className="decoration-0"><p className="text-base md:text-lg font-semibold hover:underline underline-offset-4">Resume</p></Link>
-                <Link href="/projects" className="relative decoration-0 w-fit h-fit">
+                <Link href={config?.resume ? `/resources/${config?.resume}` : ''} className="decoration-0"><p className="text-base md:text-lg font-semibold hover:underline underline-offset-4">Resume</p></Link>
+                <Link href={config?.connect_url ?? ''} className="relative decoration-0 w-fit h-fit">
                     <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>Let&apos;s Connect</div>
                 </Link>
             </nav>

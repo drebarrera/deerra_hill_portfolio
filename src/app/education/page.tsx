@@ -67,7 +67,7 @@ export default function EducationPage() {
             {
               projectContent && projectContent.length ? projectContent.map((projectData) => 
                 <div key={projectData.id} id={projectData.id} className="w-full md:h-[400px] py-[20px] px-[20px] md:px-[30px] flex flex-row flex-wrap md:flex-nowrap gap-[20px] bg-[#222222] justify-center" style={{ borderRadius: "50px" }}>
-                  { projectData.image ? <img src={`${buildImage(projectData.image)?.url()}`} className="w-[175px] md:w-[225px] aspect-[45/70] bg-[#333333]" />
+                  { projectData.image ? <img src={`${buildImage(projectData.image)?.url() ?? ''}`} className="w-[175px] md:w-[225px] aspect-[45/70] bg-[#333333]" />
                     : <div className="w-[175px] md:w-[225px] aspect-[45/70] bg-[#333333] shrink-0" />
                   }
                   <div className="w-full flex flex-col gap-[20px]">

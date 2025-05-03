@@ -15,7 +15,7 @@ export default function Carousel({ items }: { items: CarouselItemType[] | undefi
     {items && items.length ? items.map((carouselItem) => 
       <a key={carouselItem.id}  href={`/${carouselItem.project_type}/#${carouselItem.id}`} className="decoration-0">
         <div className="w-[175px] md:w-[225px] h-fit flex flex-col gap-[10px] justify-center items-center">
-          <div className="w-[175px] md:w-[225px] aspect-[45/70] bg-[#333333]" style={{backgroundImage: `url('${buildImage(carouselItem.image)?.width(500)?.url()}')`, backgroundSize: "cover", backgroundPosition: "center"}}></div>
+          <div className="w-[175px] md:w-[225px] aspect-[45/70] bg-[#333333]" style={{backgroundImage: `url('${buildImage(carouselItem.image)?.width(500)?.url() ?? ''}')`, backgroundSize: "cover", backgroundPosition: "center"}}></div>
           <div className="w-full flex flex-col gap-[5px] justify-center itemrs-center">
             <p className="w-full text-center font-semibold text-lg md:text-xl">{carouselItem?.title ?? ''}</p>
             <p className="w-full text-center text-base md:text-lg">{carouselItem?.subtitle ?? ''}</p>
