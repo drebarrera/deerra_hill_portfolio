@@ -7,6 +7,8 @@ import { deleteResource, getResources } from "../actions/query";
 import { ResourceType } from "../types";
 import { getDataAttr } from "../utils";
 
+import '@/assets/fonts/fonts.css';
+
 export default function ResourcesPage() {
   const [pageError, setPageError] = useState<boolean>(false);
   const [resources, setResources] = useState<ResourceType[]>([]);
