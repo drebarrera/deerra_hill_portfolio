@@ -1,8 +1,7 @@
-// /app/resources/[slug]/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "next-sanity";
 
-const PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const DATASET = "production";
 const API_VERSION = "2023-01-01";
 
@@ -15,19 +14,18 @@ const sanity = createClient({
 
 export async function GET(
   req: NextRequest,
-  context: { params: { slug?: string } }
+  { params }: { params: { slug: string } }
 ) {
-  const slug = (await context.params)?.slug;
-  if (!slug) {
-    return new NextResponse("Missing slug", { status: 400 });
-  }
+  const originalFilename = decodeURIComponent(params.slug);
 
-  const originalFilename = decodeURIComponent(slug);
+  const query = `*[
+    (_type == "sanity.fileAsset" || _type == "sanity.imageAsset")
+    && originalFilename == $filename
+  ][0]`;
 
-  const query = `*[(_type == "sanity.fileAsset" || _type == "sanity.imageAsset") && originalFilename == $filename][0]`;
   const file = await sanity.fetch(query, { filename: originalFilename });
 
-  if (!file || !file.url) {
+  if (!file?.url) {
     return new NextResponse("File not found", { status: 404 });
   }
 
