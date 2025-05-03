@@ -7,7 +7,7 @@ import { deleteResource, getResources } from "../actions/query";
 import { ResourceType } from "../types";
 import { getDataAttr } from "../utils";
 
-export default function () {
+export default function ResourcesPage() {
   const [pageError, setPageError] = useState<boolean>(false);
   const [resources, setResources] = useState<ResourceType[]>([]);
 
@@ -18,7 +18,7 @@ export default function () {
     });
   }, []);
 
-  const deleteItem = async (e: React.MouseEvent<any>) => {
+  const deleteItem = async (e: React.MouseEvent<SVGSVGElement>) => {
     e.preventDefault();
     const id = getDataAttr(e.target as HTMLElement, 'id');
     if (id && await deleteResource(id)) setResources((prevResources) => prevResources.filter(item => item.id !== id));

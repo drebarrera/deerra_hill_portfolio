@@ -114,7 +114,7 @@ export async function getResources(): Promise<ResourceType[] | null> {
   const result = await client.fetch(POSTS_QUERY, {}, options);
 
   const results = [];
-  for (let r of result) {
+  for (const r of result) {
     const id = r?._id;
     if (id) {
       const REF_QUERY = `*[references("${id}")][0]`;
