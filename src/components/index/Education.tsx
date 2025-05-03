@@ -12,7 +12,7 @@ function buildImage(sanityImage: SanityImageType | undefined): ImageUrlBuilder |
 }
 
 export default function Education({ supertitle, title, subtitle, description, button_text, image }: {supertitle: string, title: string, subtitle: string, description: string, button_text: string, image: SanityImageType | undefined}) {
-  return <section className="w-full h-fit py-[100px] md:py-[120px] px-[25px] md:px-[60px] flex justify-center items-center" style={{ background: "linear-gradient(to bottom, #111111 0%, #11111100 15%, #11111100 85%, #111111 100%), #6E236E" }}>
+  return <section className="w-full h-fit py-[100px] md:py-[120px] px-[25px] md:px-[60px] flex justify-center items-center" style={{ background: "linear-gradient(to bottom, #111111 0%, #11111100 15%, #11111100 85%, #111111 100%), #813D05" }}>
     <div className="max-w-[1500px] w-full h-fit flex flex-wrap-reverse md:flex-row md:flex-nowrap justify-between items-center gap-[50px]">
       <div className="w-full h-fit flex flex-col gap-[15px]">
         <h2 className="text-2xl md:text-3xl font-medium flex flex-col">

@@ -5,7 +5,6 @@ export type HomePageType = {
   main_cta_text: string;
   main_title: string;
   main_subtitle: string;
-  slug: { current: string; _type: string };
   hero_description: string;
   about_button: string;
   about_title: string;
@@ -25,14 +24,44 @@ export type HomePageType = {
   section_button: string
 }
 
+export type ProjectPageType = {
+  button_text: string;
+  button_url: string;
+  cta_text: string;
+  page_description: string;
+  page_title: string;
+}
+
+export type EducationPageType = {
+  button_text: string;
+  button_url: string;
+  cta_text: string;
+  page_description: string;
+  page_title: string;
+  page_quote_author: string;
+}
+
 export type CarouselItemType = {
   id: string;
   image: SanityImageType | undefined;
   title: string;
   subtitle: string;
+  project_type: string;
 }
 
 export type SanityImageType = {
   _type: string;
   asset: [object];
 };
+
+export type ProjectType = {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: SanityImageType | undefined;
+  date: string;
+  role: string;
+  description: string;
+  cta_text: string;
+  cta_url: string;
+}
