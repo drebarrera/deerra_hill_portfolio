@@ -12,9 +12,9 @@ const sanity = createClient({
 
 export async function GET(
   req: NextRequest,
-  context: { params: { slug: string } }
+  { params }: { params: { slug: string } }
 ): Promise<NextResponse> {
-  const slug = decodeURIComponent(context.params.slug);
+  const slug = decodeURIComponent(params.slug);
 
   const query = `*[
     (_type == "sanity.fileAsset" || _type == "sanity.imageAsset")
