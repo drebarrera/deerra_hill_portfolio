@@ -26,9 +26,9 @@ export default function Main({ supertitle, title, subtitle, image, carousel_titl
       <Carousel items={carousel_projects} />
       <div className="w-full flex flex-col justify-center items-center gap-[10px]">
         <p className="text-lg md:text-xl font-medium">{cta_caption}</p>
-        <a href={cta_button_url} className="relative decoration-0 w-fit h-fit">
+        <Link href={cta_button_url} className="relative decoration-0 w-fit h-fit">
           <div className={`text-base md:text-lg font-medium px-[16px] py-[3px] text-black ${styles.unicornButton}`} style={{ borderRadius: "20px" }}>{cta_button_text}</div>
-        </a>
+        </Link>
       </div>
     </div>
   </section>;
