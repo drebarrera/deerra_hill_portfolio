@@ -21,6 +21,7 @@ export default function IndexPage() {
       if (data && data.length) setHomePageContent(data[0]);
       else setPageError(true);
       setPageLoading(false);
+      console.log(data);
     });
   }, []);
 
